@@ -1,0 +1,10 @@
+<form (ngSubmit)="onSubmit()" #tokenForm="ngForm">
+  <label for="token">Enter your token: </label>
+  <input type="text"
+         [(ngModel)]="token"
+         id="token"
+         name="token"
+         required>
+  <br>
+  <input type="submit" value="submit">
+</form>
