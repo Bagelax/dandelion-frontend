@@ -1,17 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from "./components/home/home.component";
 import { TokenComponent } from "./components/token/token.component";
 import { TokenGuard } from "./token.guard";
-import {EntityExtractionComponent} from "./components/entity-extraction/entity-extraction.component";
-import {LanguageDetectionComponent} from "./components/language-detection/language-detection.component";
-import {SentimentAnalysisComponent} from "./components/sentiment-analysis/sentiment-analysis.component";
-import {TextSimilarityComponent} from "./components/text-similarity/text-similarity.component";
+import { EntityExtractionComponent } from "./components/entity-extraction/entity-extraction.component";
+import { LanguageDetectionComponent } from "./components/language-detection/language-detection.component";
+import { SentimentAnalysisComponent } from "./components/sentiment-analysis/sentiment-analysis.component";
+import { TextSimilarityComponent } from "./components/text-similarity/text-similarity.component";
+import { HistoryComponent } from "./components/history/history.component";
 
 const routes: Routes = [
   {
-    path: "home",
-    component: HomeComponent
+    path: '',
+    redirectTo: '/token',
+    pathMatch: 'full'
   },
   {
     path: "entity-extraction",
@@ -36,6 +37,11 @@ const routes: Routes = [
   {
     path: "token",
     component: TokenComponent,
+    canDeactivate: [TokenGuard]
+  },
+  {
+    path: "history",
+    component: HistoryComponent,
     canDeactivate: [TokenGuard]
   }
 ];

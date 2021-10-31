@@ -1,10 +1,11 @@
 <p *ngIf="tokenNotEmpty()">Token: {{ getToken() }}</p>
 <ul>
-  <li><a [routerLink]="'/home'">Home</a></li>
-  <li><a [routerLink]="'/token'">Token</a></li>
-  <li><a [routerLink]="'/entity-extraction'">Entity Extraction</a></li>
-  <li><a [routerLink]="'/language-detection'">Language Detection</a></li>
-  <li><a [routerLink]="'/sentiment-analysis'">Sentiment Analysis</a></li>
-  <li><a [routerLink]="'/text-similarity'">Text Similarity</a></li>
+  <li><a routerLink="/home">Home</a></li>
+  <li><a routerLink="/token">Token</a></li>
+  <li><a routerLink="/entity-extraction">Entity Extraction</a></li>
+  <li><a routerLink="/language-detection">Language Detection</a></li>
+  <li><a routerLink="/sentiment-analysis">Sentiment Analysis</a></li>
+  <li><a routerLink="/text-similarity">Text Similarity</a></li>
+  <li><a routerLink="/history">History</a></li>
 </ul>
 <router-outlet></router-outlet>

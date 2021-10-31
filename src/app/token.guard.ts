@@ -14,7 +14,7 @@ import { ConfigService } from "./services/config.service";
   providedIn: 'root'
 })
 export class TokenGuard implements CanActivate, CanDeactivate<unknown> {
-  constructor(private router: Router, private config: ConfigService) {  }
+  constructor(private router: Router, private config: ConfigService) { }
 
   canActivate(
     route: ActivatedRouteSnapshot,

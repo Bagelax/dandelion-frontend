@@ -1,6 +1,6 @@
 <h3>Sentiment analysis</h3>
 <br>
-<form #saForm="ngForm">
+<form [formGroup]="form" (ngSubmit)="submitForm()">
   <label
     for="text">
     Text:
@@ -8,19 +8,23 @@
   <br>
   <textarea
     id="text"
-    name="text">
-  </textarea>
+    name="text"
+    formControlName="text"></textarea>
   <br>
   Language:
   <br>
-  <input type="radio" name="lang" id="en">
+  <input type="radio" name="lang" formControlName="lang" id="en" value="en">
   <label for="en">English</label>
   <br>
-  <input type="radio" name="lang" id="it">
+  <input type="radio" name="lang" formControlName="lang" id="it" value="it">
   <label for="it">Italian</label>
   <br>
-  <input type="radio" name="lang" id="auto">
+  <input type="radio" name="lang" formControlName="lang" id="auto" value="auto">
   <label for="auto">Auto</label>
   <br>
   <input type="submit" value="submit">
 </form>
+<div *ngIf="sentiment">
+  Score: {{ sentiment.score }} <br>
+  Type: <div [ngStyle]="getBgColor()">{{ sentiment.type }}</div>
+</div>

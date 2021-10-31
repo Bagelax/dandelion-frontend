@@ -1,6 +1,6 @@
 <h3>Language detection</h3>
 <br>
-<form #ldForm="ngForm">
+<form [formGroup]="form" (ngSubmit)="submitForm()">
   <label
     for="text">
     Text:
@@ -8,11 +8,19 @@
   <br>
   <textarea
     id="text"
-    name="text">
+    name="text"
+    formControlName="text">
   </textarea>
   <br>
-  <input type="checkbox" name="clean" id="clean">
+  <input type="checkbox" name="clean" id="clean" formControlName="clean">
   <label for="clean">Clean</label>
   <br>
   <input type="submit" value="submit">
 </form>
+<div *ngIf="detectedLangs.length > 0">
+  <ul>
+    <li *ngFor="let lang of detectedLangs">
+      Language: {{ lang.lang }}, confidence: {{ lang.confidence }}
+    </li>
+  </ul>
+</div>

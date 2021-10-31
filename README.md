@@ -1,4 +1,6 @@
-# NwpDomaci
+# Dandelion front end
+
+This application is a small frontend for api on [Dandelion](https://dandelion.eu). It was created as a project for university.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.12.
 
